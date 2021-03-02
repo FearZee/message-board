@@ -1,0 +1,37 @@
+body {
+    color: white;
+
+}
+    ul{
+        background-color: gray;
+        list-style-type: none;
+        margin: 50px;
+        padding: 5px;
+
+    }
+
+    form{
+        background-color: darkgray;
+        margin: 50px;
+    }
+
+    button{
+        background-color: aqua;
+        margin: 5px;
+        padding: 10px;
+        width: 100px;
+    }
+
+    label{
+        margin: 5px;
+    }
+
+    div2{
+        font-size: x-large;
+        color: blueviolet;
+    }
+
+    div1{
+        color: #ff88bb;
+        font-size: xx-large;
+    }

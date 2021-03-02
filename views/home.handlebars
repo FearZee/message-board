@@ -1,0 +1,37 @@
+<form method="post" action="/messages/new">
+    <div>
+        <label for="author">Name:</label>
+        <input name="author" id="author" placeholder="Enter ur Name..">
+    </div>
+    <div>
+        <label for="text">Text:</label>
+        <input name="text" id="text" placeholder="Enter ur Text..">
+    </div>
+    <button type="submit">Send</button>
+</form>
+
+<ul>
+    <li>
+        <a href="/">default</a>
+    </li>
+    <li>
+        <a href="/channel/general">general</a>
+    </li>
+    <li>
+        <a href="/channel/channel1">channel1</a>
+    </li>
+</ul>
+
+<h1>{{channel.name}}</h1>
+
+<ul>
+    {{# channel}}
+    {{# messages}}
+        <li>
+            <div2>{{author}} schrieb: </div2>
+
+            <div1>{{text}}</div1>
+        </li>
+    {{/messages}}
+    {{/channel}}
+</ul>
