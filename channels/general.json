@@ -1,0 +1,25 @@
+{
+  "name": "general",
+  "messages": [
+    {
+      "author": "Sascha",
+      "text": "23512"
+    },
+    {
+      "author": "Erdem",
+      "text": "Test1432"
+    },
+    {
+      "author": "Kalle",
+      "text": "Sau"
+    },
+    {
+      "author": "Kalle",
+      "text": "Jau mega geiles Wetter! Bock was zu starten?"
+    },
+    {
+      "author": "Admin",
+      "message": "channel general"
+    }
+  ]
+}
