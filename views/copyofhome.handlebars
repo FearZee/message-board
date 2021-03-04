@@ -1,0 +1,34 @@
+<form id="inputbase" method="post" action="/messages/new">
+    <label for="author">Name:</label>
+    <input name="author" id="iauthor" placeholder="Enter ur Name..">
+    <label for="text" id="intext">Text:</label>
+    <input type="text" name="text" id="itext" placeholder="Enter ur Text..">
+    <button type="submit">Send</button>
+</form>
+
+<h1>{{channel.name}}</h1>
+
+<ul id="channels">
+    <li>
+        <form id="channelbase" action="/channel/general">
+            <input type="submit" value="general" />
+        </form>
+    </li>
+    <li>
+        <form id="channelbase" action="/channel/channel1">
+            <input type="submit" value="channel" />
+        </form>
+    </li>
+</ul>
+
+<ul id="box">
+    {{# channel}}
+        {{# messages}}
+            <li id="mbox">
+                <p id="author">{{author}}</p>
+
+                <p id="text">{{text}}</p>
+            </li>
+        {{/messages}}
+    {{/channel}}
+</ul>

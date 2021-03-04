@@ -1,0 +1,78 @@
+body {
+    color: white;
+    background-color: black;
+
+}
+ul{
+    background-color: gray;
+    list-style-type: none;
+    margin: 50px;
+    padding: 5px;
+
+}
+
+#inputbase{
+    background-color: #2b2a2b;
+    margin-left: 10%;
+    width: 80.5%;
+    height: 100px;
+}
+
+button{
+    background-color: #555455;
+    margin-left: 60px;
+    margin-top: 1%;
+    width: 509px;
+    height: 40px;
+    border: none;
+}
+
+label{
+    margin: 5px;
+}
+input{
+    margin: 5px;
+    width: 500px;
+}
+
+#text{
+    margin-left: 14px;
+}
+
+#channels{
+    margin-left: 2%;
+    margin-top: -71.5px;
+    width: 7%;
+    height: 40px;
+}
+h1{
+    background-color: #2b2a2b;
+    height: 50px;
+    width: 80.5%;
+    margin-top: 1%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#box{
+    background-color: #2b2a2b;
+    margin-left: 10%;
+    margin-top: -2%;
+    width: 80%;
+}
+
+#mbox{
+    border-style: solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-color: black;
+}
+
+#channelbase{
+    margin-top: 1%;
+    margin-left: -6%;
+}
+
+
+

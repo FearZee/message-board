@@ -1,37 +1,47 @@
-<form method="post" action="/messages/new">
-    <div>
-        <label for="author">Name:</label>
-        <input name="author" id="author" placeholder="Enter ur Name..">
-    </div>
-    <div>
-        <label for="text">Text:</label>
-        <input name="text" id="text" placeholder="Enter ur Text..">
-    </div>
-    <button type="submit">Send</button>
-</form>
-
-<ul>
-    <li>
-        <a href="/">default</a>
-    </li>
-    <li>
-        <a href="/channel/general">general</a>
-    </li>
-    <li>
-        <a href="/channel/channel1">channel1</a>
-    </li>
-</ul>
-
 <h1>{{channel.name}}</h1>
 
-<ul>
+<div class="channelchoose">
+    <h2 class="ChannelHeader">Channel</h2>
+    <form id="channelbase" action="/channel/general">
+            <input id="channelbase" type="submit" value="general" />
+    </form>
+    <form id="channelbase" action="/channel/channel1">
+        <input id="channelbase" type="submit" value="channel" />
+    </form>
+</div>
+
+<div class="outputbox">
     {{# channel}}
     {{# messages}}
-        <li>
-            <div2>{{author}} schrieb: </div2>
-
-            <div1>{{text}}</div1>
-        </li>
+    <div class="message">
+        <p id="author">{{author}}</p>
+        <p id="text">{{text}}</p>
+    </div>
     {{/messages}}
     {{/channel}}
-</ul>
+</div>
+
+<div class="messagebox">
+    <form id="inputbase" method="post" action="/messages/new">
+        <div class="inputname">
+            <input name="author" id="iauthor" placeholder="Enter ur Name..">
+        </div>
+        <div class="inputmessage">
+            <textarea type="text" name="text" id="itext" placeholder="Enter ur Text.."></textarea>
+        </div>
+        <button type="submit" class="send">Send</button>
+    </form>
+</div>
+
+<div class="userlist">
+    <h2>Users</h2>
+    <div>
+        <p id="user">Sascha</p>
+    </div>
+    <div>
+        <p id="user">Paul</p>
+    </div>
+</div>
+
+</body>
+</html>

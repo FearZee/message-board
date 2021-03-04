@@ -2,6 +2,14 @@
   "name": "channel1",
   "messages": [
     {
+      "author": "David",
+      "text": "tolles retro design"
+    },
+    {
+      "author": "Sascha",
+      "text": "Pog"
+    },
+    {
       "author": "ERdem",
       "text": "Diggah"
     },

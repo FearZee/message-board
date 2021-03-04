@@ -1,37 +1,139 @@
-body {
+body{
     color: white;
-
+    background-color: black;
+    cursor: pointer;
 }
-    ul{
-        background-color: gray;
-        list-style-type: none;
-        margin: 50px;
-        padding: 5px;
 
-    }
+.messagebox{
+    margin-top: 0%;
+    background-color: dimgrey;
+    margin-left: 9%;
+    margin-right: 10%;
+    height: 24vh;
+}
 
-    form{
-        background-color: darkgray;
-        margin: 50px;
-    }
+.inputname{
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
 
-    button{
-        background-color: aqua;
-        margin: 5px;
-        padding: 10px;
-        width: 100px;
-    }
+.inputmessage{
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
 
-    label{
-        margin: 5px;
-    }
+#itext{
+    margin-left: 1.1%;
+    width: 50%;
+}
 
-    div2{
-        font-size: x-large;
-        color: blueviolet;
-    }
+.send{
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 68%;
+    margin-top: -5%;
+    width: 30%;
+    height: 5vh;
+}
 
-    div1{
-        color: #ff88bb;
-        font-size: xx-large;
-    }
+#iauthor{
+    width: 50%;
+}
+
+h1{
+    margin-left: 9%;
+    margin-right: 10%;
+    background-color: dimgrey;
+    text-align: center;
+    font-size: 480%;
+    margin-top: auto;
+    border-bottom: solid;
+}
+
+.channelchoose{
+    min-height: 97vh;
+    margin-top: -7.75%;
+    background-color: #404040;
+    margin-right: 91%;
+}
+
+#channelbase{
+    background-color: #404040;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+}
+
+#channelbase:hover{
+    background-color: white;
+}
+
+#channelbase:active{
+    background-color: gray;
+}
+
+.outputbox{
+    margin-top: -45.89%;
+    margin-left: 9%;
+    margin-right: 10%;
+    overflow-y: scroll;
+    background-color: dimgrey;
+    width: 81%;
+    height: 613px;
+    border-bottom: solid;
+    border-top: solid;
+}
+
+.message{
+    margin-left: 5%;
+    margin-right: 5%;
+    border-color: black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom:solid;
+}
+
+#author{
+    margin-top: 1%;
+    font-size: 150%;
+}
+
+#text{
+    margin-top: -1%;
+    margin-bottom: 1%;
+}
+
+#iauthor{
+    border-radius: 15px;
+    background-color:darkgray;
+    margin-top: 1%;
+    width: 50vh;
+    height: 3vh;
+}
+
+#itext{
+    margin-left: -.1%;
+    border-radius: 15px;
+    background-color:darkgray;
+    width: 100vh;
+    height: 10vh;
+}
+
+.ChannelHeader{
+    margin-bottom: 5%;
+    font-size: 200%;
+    text-align: center;
+}
+
+.userlist{
+    margin-left: 90%;
+    background-color: #404040;
+    text-align: center;
+    margin-top: -956px;
+    min-height: 97vh;
+}
+
+#user{
+    margin-top: 5%;
+}
