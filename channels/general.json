@@ -1,129 +1,15 @@
 {
   "name": "general",
+  "empty": "false",
   "messages": [
     {
-      "author": "Sascha",
-      "text": "geiler Tag heute\r\n"
-    },
-    {
-      "author": "asdasd",
-      "text": "asdasdas"
-    },
-    {
-      "author": "awdasd",
-      "text": "asdasd"
-    },
-    {
-      "author": "awasd",
-      "text": "asdasd"
-    },
-    {
-      "author": "sdasd",
-      "text": "asdasd"
-    },
-    {
-      "author": "asdasd",
-      "text": "asdasd"
-    },
-    {
-      "author": "asdasda",
-      "text": "dasdasda"
-    },
-    {
-      "author": "asdasd",
-      "text": "as"
-    },
-    {
-      "author": "asdasd",
-      "text": "asdasd"
-    },
-    {
-      "author": "asdasd",
-      "text": "asd"
-    },
-    {
-      "author": "asd",
-      "text": "asda"
-    },
-    {
-      "author": "adsd",
-      "text": "asd"
-    },
-    {
-      "author": "asdasda",
-      "text": "asd"
-    },
-    {
-      "author": "asda",
-      "text": "adsasda"
-    },
-    {
-      "author": "Adolf",
-      "text": "gfhghg"
-    },
-    {
-      "author": "susi",
-      "text": "hasdasd"
-    },
-    {
-      "author": "susi",
-      "text": "asdasda"
-    },
-    {
-      "author": "ERdem",
-      "text": "kjhg"
-    },
-    {
-      "author": "Kalle",
-      "text": "Hallo"
-    },
-    {
-      "author": "Sascha",
-      "text": "sasasa"
-    },
-    {
-      "author": "ERdem",
-      "text": "hallo"
-    },
-    {
-      "author": "ERdem",
-      "text": "dasdasdasd"
-    },
-    {
-      "author": "ERdem",
-      "text": "das ist wahnsin\r\n"
-    },
-    {
-      "author": "ss",
-      "text": "Hallo"
-    },
-    {
-      "author": "Kalle",
-      "text": "Test"
-    },
-    {
-      "author": "Erdem",
-      "text": "Test1432"
-    },
-    {
-      "author": "Kalle",
-      "text": "Sau"
-    },
-    {
-      "author": "Kalle",
-      "text": "Jau mega geiles Wetter! Bock was zu starten?"
-    },
-    {
       "author": "Admin",
-      "message": "channel general"
+      "text": "empty"
     }
   ],
   "users": [
     {
-      "name": "Erdem"
-    },
-    {
-      "name": "Admin"
+      "author": "Admin"
     }
   ]
 }

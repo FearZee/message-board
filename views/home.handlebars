@@ -35,12 +35,13 @@
 
 <div class="userlist">
     <h2>Users</h2>
+    {{# channel}}
+    {{# users}}
     <div>
-        <p id="user">Sascha</p>
+        <p id="user">{{author}}</p>
     </div>
-    <div>
-        <p id="user">Paul</p>
-    </div>
+    {{/users}}
+    {{/channel}}
 </div>
 
 </body>

@@ -9,7 +9,7 @@ const FILE_OPTIONS = {encoding:'utf8'};
 const app = express()
 const port = 8080
 
-let names = []
+let machtes;
 
 let channelFileName = path.join(CHANNEL_DIR, `general.json`);
 let userFileName = path.join(USER_DIR, `general.json`)
@@ -58,6 +58,10 @@ app.post('/messages/new', (request, response) => {
         text
     }
 
+    const user = {
+        author
+    }
+
     if(!existsSync(channelFileName)){
         response.status(404).end();
         return
@@ -73,6 +77,21 @@ app.post('/messages/new', (request, response) => {
             }
             let channel = JSON.parse(text);
             channel.messages.unshift(message);
+
+            machtes = channel.empty
+
+            channel.users.forEach(element => {
+                if(element.author === user.author){
+                    machtes = false
+                    return
+                }
+                machtes = true;
+            })
+
+            if(machtes){
+                machtes = false;
+                channel.users.push(user)
+            }
 
             writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
                 if(error){

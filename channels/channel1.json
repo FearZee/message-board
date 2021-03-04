@@ -1,45 +1,19 @@
 {
   "name": "channel1",
+  "empty": "false",
   "messages": [
     {
-      "author": "David",
-      "text": "tolles retro design"
-    },
-    {
-      "author": "Sascha",
-      "text": "Pog"
-    },
-    {
-      "author": "ERdem",
-      "text": "Diggah"
-    },
-    {
-      "author": "Kalle",
-      "text": "Giraffe"
-    },
-    {
-      "author": "Kalle",
-      "text": "Affe!11"
-    },
-    {
-      "author": "Kalle",
-      "text": "Test1213"
-    },
-    {
-      "author": "Kalle",
-      "text": "Schönes Wetter heute!"
-    },
-    {
-      "author": "Kalle",
-      "text": "Hallo1"
-    },
-    {
-      "author": "Kalle",
-      "text": "Ne its CORONA TIME RIGHT NOW!!111!!"
+      "author": "Admin",
+      "text": "pog"
     },
     {
       "author": "Admin",
-      "message": "Channel1"
+      "text": "full"
+    }
+  ],
+  "users": [
+    {
+      "author": "Admin"
     }
   ]
 }
