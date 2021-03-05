@@ -1,40 +1,40 @@
 const express = require('express')
 const {readFile, writeFile, existsSync} = require('fs')
 const path = require('path')
-const exphbs  = require('express-handlebars');
-const CHANNEL_DIR = path.join(__dirname, 'channels');
-const USER_DIR = path.join(__dirname, 'users');
-const FILE_OPTIONS = {encoding:'utf8'};
+const exphbs  = require('express-handlebars')
+const CHANNEL_DIR = path.join(__dirname, 'channels')
+const USER_DIR = path.join(__dirname, 'users')
+const FILE_OPTIONS = {encoding:'utf8'}
 
 const app = express()
 const port = 8080
 
-let machtes;
+let machtes
 
-let channelFileName = path.join(CHANNEL_DIR, `general.json`);
+let channelFileName = path.join(CHANNEL_DIR, `general.json`)
 let userFileName = path.join(USER_DIR, `general.json`)
 
-let testName = 'general';
+let testName = 'general'
 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs())
+app.set('view engine', 'handlebars')
 app.use('/static', express.static( './public'));
-app.use(express.urlencoded());
+app.use(express.urlencoded())
 
 app.get('/', (request, response) => {
-    response.redirect(`/channel/${testName}`);
+    response.redirect(`/channel/${testName}`)
 })
 
 app.get('/channel/:channelName', (request, response) => {
 
-    const {channelName} = request.params;
+    const {channelName} = request.params
 
-    testName = channelName;
+    testName = channelName
 
-    channelFileName = path.join(CHANNEL_DIR, `${channelName}.json`);
+    channelFileName = path.join(CHANNEL_DIR, `${channelName}.json`)
 
     if(!existsSync(channelFileName)){
-        response.status(404).end();
+        response.status(404).end()
         return
     }
 
@@ -43,20 +43,20 @@ app.get('/channel/:channelName', (request, response) => {
         FILE_OPTIONS,
         (error, text) => {
             if(error){
-                response.status(500).end();
+                response.status(500).end()
             }
-            const channel = JSON.parse(text);
+            const channel = JSON.parse(text)
             response.render('home', {channel})
         })
 })
 
 app.post('/channel/:channelName', (request, response) => {
 
-    const {channelName} = request.params;
+    const {channelName} = request.params
 
-    testName = channelName;
+    testName = channelName
 
-    const {author, text} = request.body;
+    const {author, text} = request.body
     const message = {
         author,
         text
@@ -67,7 +67,7 @@ app.post('/channel/:channelName', (request, response) => {
     }
 
     if(!existsSync(channelFileName)){
-        response.status(404).end();
+        response.status(404).end()
         return
     }
 
@@ -76,11 +76,11 @@ app.post('/channel/:channelName', (request, response) => {
         FILE_OPTIONS,
         (error, text) => {
             if(error){
-                response.status(500).end();
+                response.status(500).end()
                 return
             }
-            let channel = JSON.parse(text);
-            channel.messages.unshift(message);
+            let channel = JSON.parse(text)
+            channel.messages.unshift(message)
 
             machtes = channel.empty
 
@@ -99,9 +99,9 @@ app.post('/channel/:channelName', (request, response) => {
 
             writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
                 if(error){
-                    response.status(500).end();
+                    response.status(500).end()
                 } else {
-                    response.redirect(`/`);
+                    response.redirect(`/`)
                 }
             })
         })

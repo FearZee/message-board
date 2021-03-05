@@ -3,6 +3,14 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Sascha",
+      "text": "Pog"
+    },
+    {
+      "author": "Leoni",
+      "text": "Hallo i bims Leoni!!!!1111!!!!"
+    },
+    {
       "author": "ZYX",
       "text": "asdasdasd"
     },
@@ -24,6 +32,12 @@
     },
     {
       "author": "ZYX"
+    },
+    {
+      "author": "Leoni"
+    },
+    {
+      "author": "Sascha"
     }
   ]
 }

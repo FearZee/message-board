@@ -3,6 +3,10 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Ibims Sascha",
+      "text": "I bins der Sascha Hallo!"
+    },
+    {
       "author": "ABC",
       "text": "dddddd"
     },
@@ -63,6 +67,9 @@
     },
     {
       "author": "ABC"
+    },
+    {
+      "author": "Ibims Sascha"
     }
   ]
 }
