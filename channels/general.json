@@ -3,6 +3,14 @@
   "empty": "false",
   "messages": [
     {
+      "author": "ZYX",
+      "text": "asdasdasd"
+    },
+    {
+      "author": "Testiiiiiiiiiii",
+      "text": "iiiiiiiiiiiiiiaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
       "author": "Admin",
       "text": "empty"
     }
@@ -10,6 +18,12 @@
   "users": [
     {
       "author": "Admin"
+    },
+    {
+      "author": "Testiiiiiiiiiii"
+    },
+    {
+      "author": "ZYX"
     }
   ]
 }

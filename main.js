@@ -50,7 +50,11 @@ app.get('/channel/:channelName', (request, response) => {
         })
 })
 
-app.post('/messages/new', (request, response) => {
+app.post('/channel/:channelName', (request, response) => {
+
+    const {channelName} = request.params;
+
+    testName = channelName;
 
     const {author, text} = request.body;
     const message = {
