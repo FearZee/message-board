@@ -7,7 +7,7 @@ const USER_DIR = path.join(__dirname, 'users')
 const FILE_OPTIONS = {encoding:'utf8'}
 
 const app = express()
-const port = 8080
+const port = 3000
 
 let machtes
 let tempFile
@@ -135,4 +135,29 @@ app.post('/channel/:channelName', (request, response) => {
 
 app.listen(port,() => {
     console.log(`Example app listening at http://localhost:${port}`)
+})
+
+app.post('/testichannel', (req, res) => {
+    const { ichannel } = req.body
+
+    const addnewchannel = {
+        ichannel
+    }
+
+    readFile(path.join(__dirname, 'basicchannel.json'),FILE_OPTIONS, (err, data) => {
+        if(err){
+            res.status(500).end()
+            return
+        }
+        const content = JSON.parse(data)
+        content.name = ichannel
+
+        writeFile(path.join(CHANNEL_DIR, `${addnewchannel.ichannel}.json`), JSON.stringify(content, null, 2), FILE_OPTIONS, (error)=> {
+            if(error){
+                res.status(500).end()
+            } else {
+                res.redirect(`/`)
+            }
+        })
+    })
 })
