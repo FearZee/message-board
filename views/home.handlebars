@@ -2,22 +2,21 @@
 
 <div class="channelchoose">
     <h2 class="ChannelHeader">Channel</h2>
-    <form id="channelbase" action="/channel/general">
-            <input id="channelbase" type="submit" value="general" />
+    {{# channels}}
+    <form id="channelbase" action="/channel/{{this}}">
+        <input id="channelbase" type="submit" value="{{this}}" />
     </form>
-    <form id="channelbase" action="/channel/channel1">
-        <input id="channelbase" type="submit" value="channel" />
-    </form>
+    {{/channels}}
 </div>
 
 <div class="outputbox">
     {{# channel}}
-    {{# messages}}
-    <div class="message">
-        <p id="author">{{author}}</p>
-        <p id="text">{{text}}</p>
-    </div>
-    {{/messages}}
+        {{# messages}}
+            <div class="message">
+                <p id="author">{{author}}</p>
+                <p id="text">{{text}}</p>
+            </div>
+        {{/messages}}
     {{/channel}}
 </div>
 
@@ -36,11 +35,11 @@
 <div class="userlist">
     <h2>Users</h2>
     {{# channel}}
-    {{# users}}
-    <div>
-        <p id="user">{{author}}</p>
-    </div>
-    {{/users}}
+        {{# users}}
+            <div>
+                <p id="user">{{author}}</p>
+            </div>
+        {{/users}}
     {{/channel}}
 </div>
 

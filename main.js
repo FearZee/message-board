@@ -1,5 +1,5 @@
 const express = require('express')
-const {readFile, writeFile, existsSync} = require('fs')
+const {readFile, writeFile, existsSync, readdir} = require('fs')
 const path = require('path')
 const exphbs  = require('express-handlebars')
 const CHANNEL_DIR = path.join(__dirname, 'channels')
@@ -10,11 +10,14 @@ const app = express()
 const port = 8080
 
 let machtes
+let tempFile
+
+let testName = 'general'
+
+let channels =[]
 
 let channelFileName = path.join(CHANNEL_DIR, `general.json`)
 let userFileName = path.join(USER_DIR, `general.json`)
-
-let testName = 'general'
 
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
@@ -38,16 +41,39 @@ app.get('/channel/:channelName', (request, response) => {
         return
     }
 
-    readFile(
-        channelFileName,
-        FILE_OPTIONS,
-        (error, text) => {
-            if(error){
-                response.status(500).end()
-            }
-            const channel = JSON.parse(text)
-            response.render('home', {channel})
-        })
+
+    readdir(CHANNEL_DIR, (err, files) => {
+        if(err){
+            response.status(500).end()
+            return
+        }
+        for (let file of files){
+
+            const fileName = path.join(CHANNEL_DIR, file)
+            readFile(fileName, {encoding: 'utf-8'}, (err, data) => {
+                tempFile = JSON.parse(data)
+
+                if(channels.length < 1){
+                    channels.push(tempFile.name)
+                }
+                if(!channels.includes(tempFile.name)){
+                    channels.push(tempFile.name)
+                }
+            })
+        }
+        readFile(
+            channelFileName,
+            FILE_OPTIONS,
+            (error, text) => {
+                if(error){
+                    response.status(500).end()
+                    return
+                }
+                const channel = JSON.parse(text)
+                console.log(channels)
+                response.render('home', {channel , channels})
+            })
+    })
 })
 
 app.post('/channel/:channelName', (request, response) => {
