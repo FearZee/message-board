@@ -1,0 +1,30 @@
+<div style="margin-top: 30px">
+    <div>
+
+        {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+        <form method="POST" action="/register">
+            <div>
+                <label for="nameInput">UserName</label>
+                <input name="name" type="text" id="nameInput">
+            </div>
+
+            <div>
+                <label for="passwordInput">Password</label>
+                <input name="password" type="password" id="passwordInput" placeholder="Password">
+            </div>
+
+            <div>
+                <label for="confirmPasswordInput">Confirm Password</label>
+                <input name="confirmPassword" type="password" id="confirmPasswordInput"
+                       placeholder="Re-enter your password here">
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>

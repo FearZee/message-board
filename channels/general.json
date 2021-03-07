@@ -4,6 +4,20 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Admin",
+      "text": "Nicer Dicer"
+    },
+    {
+      "author": "Admin",
+      "text": "Testi\r\n"
+    },
+    {
+      "text": "Hallo"
+    },
+    {
+      "text": "Hallo"
+    },
+    {
       "author": "Sascha",
       "text": "Testi"
     },
@@ -52,6 +66,22 @@
     {
       "author": "asdasd"
     },
-    {}
+    {},
+    {
+      "name": "Admin",
+      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+    },
+    {
+      "name": "Admin",
+      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+    },
+    {
+      "name": "Admin",
+      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+    },
+    {
+      "name": "Admin",
+      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+    }
   ]
 }
