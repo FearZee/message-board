@@ -1,43 +1,8 @@
 {
   "name": "general",
+  "id": 1,
   "empty": "false",
   "messages": [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {
-      "author": "asdasd",
-      "text": "asdasd"
-    },
-    {},
-    {},
-    {},
-    {
-      "author": "",
-      "text": ""
-    },
-    {
-      "author": "",
-      "text": ""
-    },
-    {
-      "author": "",
-      "text": ""
-    },
-    {
-      "author": "",
-      "text": ""
-    },
-    {},
-    {},
-    {},
     {
       "author": "Sascha",
       "text": "Testi"

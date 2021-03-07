@@ -1,5 +1,6 @@
 {
   "name": "channel1",
+  "id": 2,
   "empty": "false",
   "messages": [
     {

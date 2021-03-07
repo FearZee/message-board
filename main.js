@@ -1,5 +1,5 @@
 const express = require('express')
-const {readFile, writeFile, existsSync, readdir} = require('fs')
+const {readFile, writeFile, existsSync, readdir, readdirSync, readFileSync} = require('fs')
 const path = require('path')
 const exphbs  = require('express-handlebars')
 const CHANNEL_DIR = path.join(__dirname, 'channels')
@@ -10,7 +10,7 @@ const app = express()
 const port = 3000
 
 let machtes
-let tempFile
+//let tempFile
 
 let testName = 'general'
 
@@ -42,16 +42,18 @@ app.get('/channel/:channelName', (request, response) => {
     }
 
 
-    readdir(CHANNEL_DIR, (err, files) => {
-        if(err){
-            response.status(500).end()
-            return
-        }
+    let files = readdirSync(CHANNEL_DIR,{encoding: 'utf-8'})
+
         for (let file of files){
+            console.log('file: ' + file)
+            console.log('files: ' + files)
 
             const fileName = path.join(CHANNEL_DIR, file)
-            readFile(fileName, {encoding: 'utf-8'}, (err, data) => {
-                tempFile = JSON.parse(data)
+            console.log('fileName: ' + fileName)
+            let tempFile = JSON.parse(readFileSync(fileName, 'utf-8'))
+            /*readFile(fileName, {encoding: 'utf-8'}, (err, data) => {
+                tempFile = JSON.parse(data)*/
+                console.log('tempFileName: ' + tempFile.name)
 
                 if(channels.length < 1){
                     channels.push(tempFile.name)
@@ -59,7 +61,7 @@ app.get('/channel/:channelName', (request, response) => {
                 if(!channels.includes(tempFile.name)){
                     channels.push(tempFile.name)
                 }
-            })
+
         }
         readFile(
             channelFileName,
@@ -73,7 +75,6 @@ app.get('/channel/:channelName', (request, response) => {
                 console.log(channels)
                 response.render('home', {channel , channels})
             })
-    })
 })
 
 app.post('/channel/:channelName', (request, response) => {
