@@ -24,6 +24,8 @@ app.set('view engine', 'handlebars')
 app.use('/static', express.static( './public'));
 app.use(express.urlencoded())
 
+Array.prototype.insert = function (index, item){ this.splice(index, 0, item)}
+
 app.get('/', (request, response) => {
     response.redirect(`/channel/${testName}`)
 })
@@ -45,24 +47,22 @@ app.get('/channel/:channelName', (request, response) => {
     let files = readdirSync(CHANNEL_DIR,{encoding: 'utf-8'})
 
         for (let file of files){
-            console.log('file: ' + file)
-            console.log('files: ' + files)
 
             const fileName = path.join(CHANNEL_DIR, file)
-            console.log('fileName: ' + fileName)
             let tempFile = JSON.parse(readFileSync(fileName, 'utf-8'))
             /*readFile(fileName, {encoding: 'utf-8'}, (err, data) => {
                 tempFile = JSON.parse(data)*/
-                console.log('tempFileName: ' + tempFile.name)
 
                 if(channels.length < 1){
+                    //channels.splice(tempFile.id, tempFile.name)
                     channels.push(tempFile.name)
                 }
                 if(!channels.includes(tempFile.name)){
-                    channels.push(tempFile.name)
+                    channels.insert(tempFile.id, tempFile.name)
                 }
 
         }
+        console.log(channels)
         readFile(
             channelFileName,
             FILE_OPTIONS,
@@ -72,7 +72,6 @@ app.get('/channel/:channelName', (request, response) => {
                     return
                 }
                 const channel = JSON.parse(text)
-                console.log(channels)
                 response.render('home', {channel , channels})
             })
 })
@@ -152,6 +151,7 @@ app.post('/testichannel', (req, res) => {
         }
         const content = JSON.parse(data)
         content.name = ichannel
+        content.id = channels.length
 
         writeFile(path.join(CHANNEL_DIR, `${addnewchannel.ichannel}.json`), JSON.stringify(content, null, 2), FILE_OPTIONS, (error)=> {
             if(error){
