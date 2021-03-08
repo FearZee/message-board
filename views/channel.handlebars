@@ -3,8 +3,8 @@
 <div class="channelchoose">
     <h2 class="ChannelHeader">Channel</h2>
     {{# channels}}
-    <form id="channelbase" action="/channel/{{this}}">
-        <input id="channelbase" type="submit" value="{{this}}" />
+    <form id="channelbase" action="/channel/{{this.name}}">
+        <input id="channelbase" type="submit" value="{{this.name}}" />
     </form>
     {{/channels}}
     <form id="ichannel" method="post" action="/testichannel">
@@ -43,7 +43,7 @@
     {{# channel}}
         {{# users}}
             <div>
-                <p id="user">{{author}}</p>
+                <p id="user">{{name}}</p>
             </div>
         {{/users}}
     {{/channel}}

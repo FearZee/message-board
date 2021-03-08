@@ -1,14 +1,16 @@
 const express = require('express')
+let http = require('http');
 const {readFile, writeFile, existsSync, readdir, readdirSync, readFileSync} = require('fs')
 const path = require('path')
 const exphbs  = require('express-handlebars')
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const CHANNEL_DIR = path.join(__dirname, 'channels')
-const USER_DIR = path.join(__dirname, 'users')
+const USER_DIR = path.join(__dirname, 'user')
 const FILE_OPTIONS = {encoding:'utf8'}
 
 const app = express()
+let server = http.createServer(app);
 const port = 3000
 
 let machtes
@@ -19,7 +21,7 @@ let testName = 'general'
 let channels =[]
 
 let channelFileName = path.join(CHANNEL_DIR, `general.json`)
-let userFileName = path.join(USER_DIR, `general.json`)
+let userFileName = path.join(USER_DIR, `Users.json`)
 
 // To support URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,12 +56,7 @@ app.use((req, res, next) =>{
     next()
 } )
 
-const users = [
-    {
-        name: 'Admin',
-        password: 'XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg='
-    }
-]
+const users = JSON.parse(readFileSync(userFileName, 'utf-8'))
 
 app.get('/', (request, response) => {
     response.render('home')
@@ -89,9 +86,11 @@ app.post('/register', (req, res) => {
             password: hashedPassword
         })
 
-        res.render('login',{
-            message: 'Registration complete. Please login to continue',
-            messageClass: 'alert-success'
+        writeFile(userFileName, JSON.stringify(users,null,2),{encoding:'utf-8'}, err => {
+            res.render('login',{
+                message: 'Registration complete. Please login to continue',
+                messageClass: 'alert-success'
+        })
         })
     }else {
         res.render('registration',{
@@ -154,13 +153,20 @@ app.get('/channel/:channelName', (request, response) => {
                 tempFile = JSON.parse(data)*/
 
                 if(channels.length < 1){
-                    channels.push(tempFile.name)
+                    channels.push(tempFile)
+                }else if(!channels.some(el =>{
+                    if(el.name === tempFile.name){
+                        return true
+                    }else if(el.name != tempFile.name){
+                        //return false
+                    }
+                })){
+                    channels.push(tempFile)
                 }
-                if(!channels.includes(tempFile.name)){
-                    channels.insert(tempFile.id, tempFile.name)
-                }
-
         }
+        channels.sort(function (a,b) {
+            return a.id - b.id
+        })
 
         readFile(
             channelFileName,
@@ -195,7 +201,7 @@ app.post('/channel/:channelName', (request, response) => {
 
     message.author = request.user.name
 
-    const writer = request.user
+    const writer = request.user.name
 
     if(!existsSync(channelFileName)){
         response.status(404).end()
@@ -216,7 +222,7 @@ app.post('/channel/:channelName', (request, response) => {
             machtes = channel.empty
 
             channel.users.forEach(element => {
-                if(element.author === writer.name){
+                if(element.name === writer){
                     machtes = false
                     return
                 }
@@ -238,9 +244,14 @@ app.post('/channel/:channelName', (request, response) => {
         })
 })
 
-app.listen(port,() => {
+/*app.listen(port,() => {
     console.log(`Example app listening at http://localhost:${port}`)
-})
+})*/
+
+server.listen(3000, 'localhost');
+server.on('listening', function() {
+    console.log('Express server started on port %s at %s', server.address().port, server.address().address);
+});
 
 app.post('/testichannel', (req, res) => {
     const { ichannel } = req.body
@@ -262,7 +273,7 @@ app.post('/testichannel', (req, res) => {
             if(error){
                 res.status(500).end()
             } else {
-                res.redirect(`/`)
+                res.redirect(`/channel/${addnewchannel.ichannel}`)
             }
         })
     })

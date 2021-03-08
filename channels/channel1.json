@@ -4,6 +4,10 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Sascha",
+      "text": "Ollah"
+    },
+    {
       "author": "Ibims Sascha",
       "text": "I bins der Sascha Hallo!"
     },
@@ -46,31 +50,31 @@
   ],
   "users": [
     {
-      "author": "Admin"
+      "name": "Admin"
     },
     {
-      "author": "Sascha"
+      "name": "Sascha"
     },
     {
-      "author": "Kalle"
+      "name": "Kalle"
     },
     {
-      "author": "Test"
+      "name": "Test"
     },
     {
-      "author": "testi t"
+      "name": "testi t"
     },
     {
-      "author": "Adolf"
+      "name": "Adolf"
     },
     {
-      "author": "Testiiiiii"
+      "name": "Testiiiiii"
     },
     {
-      "author": "ABC"
+      "name": "ABC"
     },
     {
-      "author": "Ibims Sascha"
+      "name": "Ibims Sascha"
     }
   ]
 }

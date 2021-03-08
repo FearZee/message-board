@@ -4,6 +4,10 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Erdem",
+      "text": "Ja nice!"
+    },
+    {
       "author": "Admin",
       "text": "Nicer Dicer"
     },
@@ -44,44 +48,22 @@
   ],
   "users": [
     {
-      "author": "Admin"
+      "name": "Admin"
     },
     {
-      "author": "Testiiiiiiiiiii"
+      "name": "Testiiiiiiiiiii"
     },
     {
-      "author": "ZYX"
+      "name": "ZYX"
     },
     {
-      "author": "Leoni"
+      "name": "Leoni"
     },
     {
-      "author": "Sascha"
-    },
-    {},
-    {
-      "author": ""
-    },
-    {},
-    {
-      "author": "asdasd"
-    },
-    {},
-    {
-      "name": "Admin",
-      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+      "name": "Sascha"
     },
     {
-      "name": "Admin",
-      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
-    },
-    {
-      "name": "Admin",
-      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
-    },
-    {
-      "name": "Admin",
-      "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+      "name": "asdasd"
     }
   ]
 }
