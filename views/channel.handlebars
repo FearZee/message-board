@@ -1,0 +1,53 @@
+<h1>{{channel.name}}</h1>
+
+<div class="channelchoose">
+    <h2 class="ChannelHeader">Channel</h2>
+    {{# channels}}
+    <form id="channelbase" action="/channel/{{this.name}}">
+        <input id="channelbase" type="submit" value="{{this.name}}" />
+    </form>
+    {{/channels}}
+    <form id="ichannel" method="post" action="/testichannel">
+        <div class="inputchannel">
+            <input name="ichannel" id="ichannel" placeholder="Enter a name for a new channel">
+        </div>
+        <button type="submit">Add new Channel!</button>
+    </form>
+</div>
+
+<div class="outputbox">
+    {{# channel}}
+        {{# messages}}
+            <div class="message">
+                <p id="author">{{author}}</p>
+                <p id="text">{{text}}</p>
+            </div>
+        {{/messages}}
+    {{/channel}}
+</div>
+
+<div class="messagebox">
+    <form id="inputbase" method="post" action="/channel/{{channel.name}}">
+        <!--<div class="inputname">
+            <input name="author" id="iauthor" placeholder="Enter ur Name..">
+        </div>--->
+        <div class="inputmessage">
+            <textarea type="text" name="text" id="itext" placeholder="Enter ur Text.."></textarea>
+        </div>
+        <button type="submit" class="send">Send</button>
+    </form>
+</div>
+
+<div class="userlist">
+    <h2>Users</h2>
+    {{# channel}}
+        {{# users}}
+            <div>
+                <p id="user">{{name}}</p>
+            </div>
+        {{/users}}
+    {{/channel}}
+</div>
+
+</body>
+</html>

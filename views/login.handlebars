@@ -1,0 +1,22 @@
+<div style="margin-top: 100px">
+    <div>
+
+        {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+                {{message}}
+            </div>
+        {{/if}}
+
+        <form method="POST" action="/login">
+            <div>
+                <label for="exampleInputName1">UserName</label>
+                <input name="name" type="text" id="exampleInputName1" placeholder="Enter UserName">
+            </div>
+            <div>
+                <label for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>

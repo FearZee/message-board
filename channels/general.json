@@ -4,6 +4,24 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Erdem",
+      "text": "Ja nice!"
+    },
+    {
+      "author": "Admin",
+      "text": "Nicer Dicer"
+    },
+    {
+      "author": "Admin",
+      "text": "Testi\r\n"
+    },
+    {
+      "text": "Hallo"
+    },
+    {
+      "text": "Hallo"
+    },
+    {
       "author": "Sascha",
       "text": "Testi"
     },
@@ -30,28 +48,22 @@
   ],
   "users": [
     {
-      "author": "Admin"
+      "name": "Admin"
     },
     {
-      "author": "Testiiiiiiiiiii"
+      "name": "Testiiiiiiiiiii"
     },
     {
-      "author": "ZYX"
+      "name": "ZYX"
     },
     {
-      "author": "Leoni"
+      "name": "Leoni"
     },
     {
-      "author": "Sascha"
+      "name": "Sascha"
     },
-    {},
     {
-      "author": ""
-    },
-    {},
-    {
-      "author": "asdasd"
-    },
-    {}
+      "name": "asdasd"
+    }
   ]
 }
