@@ -1,14 +1,17 @@
 [
   {
     "name": "Admin",
-    "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+    "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
+    "role": "Admin"
   },
   {
     "name": "Sascha",
-    "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg="
+    "password": "XohImNooBHFR0OVvjcYpJ3NgPQ1qq73WKhHvch0VQtg=",
+    "role": "User"
   },
   {
     "name": "Erdem",
-    "password": "lzN5EVnIl4M0lXUBdV5GV2fn7ZQtgmGvvRoU9bplMNk="
+    "password": "lzN5EVnIl4M0lXUBdV5GV2fn7ZQtgmGvvRoU9bplMNk=",
+    "role": "User"
   }
 ]

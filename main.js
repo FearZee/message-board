@@ -83,7 +83,8 @@ app.post('/register', (req, res) => {
 
         users.push({
             name,
-            password: hashedPassword
+            password: hashedPassword,
+            role: 'standard'
         })
 
         writeFile(userFileName, JSON.stringify(users,null,2),{encoding:'utf-8'}, err => {
@@ -157,8 +158,6 @@ app.get('/channel/:channelName', (request, response) => {
                 }else if(!channels.some(el =>{
                     if(el.name === tempFile.name){
                         return true
-                    }else if(el.name != tempFile.name){
-                        //return false
                     }
                 })){
                     channels.push(tempFile)
@@ -201,7 +200,10 @@ app.post('/channel/:channelName', (request, response) => {
 
     message.author = request.user.name
 
-    const writer = request.user.name
+    const {writer} = request.user.name
+    const testwriter ={name: request.user.name}
+    const userrole = request.user.role
+
 
     if(!existsSync(channelFileName)){
         response.status(404).end()
@@ -220,18 +222,19 @@ app.post('/channel/:channelName', (request, response) => {
             channel.messages.unshift(message)
 
             machtes = channel.empty
+            //console.log(channel.users.role)
 
-            channel.users.forEach(element => {
-                if(element.name === writer){
-                    machtes = false
-                    return
-                }
-                machtes = true;
-            })
+            if(!channel.users.some(el=>{
+                if(el.name === message.author)
+                    return false
+            })){
+                machtes = false
+            }else
+                machtes = true
 
             if(machtes){
                 machtes = false;
-                channel.users.push(writer)
+                channel.users.push(testwriter)
             }
 
             writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
@@ -244,14 +247,9 @@ app.post('/channel/:channelName', (request, response) => {
         })
 })
 
-/*app.listen(port,() => {
+app.listen(port,() => {
     console.log(`Example app listening at http://localhost:${port}`)
-})*/
-
-server.listen(3000, 'localhost');
-server.on('listening', function() {
-    console.log('Express server started on port %s at %s', server.address().port, server.address().address);
-});
+})
 
 app.post('/testichannel', (req, res) => {
     const { ichannel } = req.body
