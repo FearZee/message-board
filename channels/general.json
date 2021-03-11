@@ -4,274 +4,82 @@
   "empty": "false",
   "messages": [
     {
-      "author": "Sascha",
-      "text": "asdadasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adasdasdada"
+      "author": "Admin",
+      "text": "Hallo ich bins",
+      "xpos": "555",
+      "ypos": "332"
     },
     {
       "author": "Admin",
-      "text": "adasdasdasd"
+      "text": "asdasd",
+      "xpos": "368",
+      "ypos": "464"
     },
     {
       "author": "Admin",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "sadasdasda"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
+      "text": "test",
+      "xpos": "1436",
+      "ypos": "49"
     },
     {
       "author": "Admin",
-      "text": "sdadadsd"
+      "text": "asdasdasd",
+      "xpos": "170",
+      "ypos": "610"
     },
     {
       "author": "Admin",
-      "text": "asdasdasasdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsdasda"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdas"
+      "text": "",
+      "xpos": "326",
+      "ypos": "49"
     },
     {
       "author": "Admin",
-      "text": "adadasd"
+      "text": "dasdasd",
+      "xpos": "1036",
+      "ypos": "568"
     },
     {
       "author": "Admin",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Admin",
-      "text": "adasdasd"
-    },
-    {
-      "author": "Admin",
-      "text": "asdasdasd"
+      "text": "asdasdasdasd",
+      "xpos": "981",
+      "ypos": "151"
     },
     {
       "author": "Sascha",
-      "text": "dasdasdasd"
+      "text": "asdasdasda",
+      "xpos": "1171",
+      "ypos": "163"
     },
     {
       "author": "Sascha",
-      "text": "adasdasdasd"
+      "text": "asdasd",
+      "xpos": "537",
+      "ypos": "135"
     },
     {
       "author": "Sascha",
-      "text": "adasdasdas"
+      "text": "asdasdas",
+      "xpos": "543",
+      "ypos": "533"
     },
     {
       "author": "Sascha",
-      "text": "adadasda"
+      "text": "asdasdas",
+      "xpos": "886",
+      "ypos": "222"
     },
     {
       "author": "Sascha",
-      "text": "adasdasdas"
-    },
-    {
-      "author": "Admin",
-      "text": "adasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "dasdasdasda"
+      "text": "adasdasd",
+      "xpos": "17",
+      "ypos": "19"
     },
     {
       "author": "Sascha",
-      "text": "test"
-    },
-    {
-      "author": "Sascha",
-      "text": "adasdasdas"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsasdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "aadasda"
-    },
-    {
-      "author": "Sascha",
-      "text": "adasdasdadasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasdas"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "ich und du"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsasdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasdasdas"
-    },
-    {
-      "author": "Admin",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Admin",
-      "text": "test"
-    },
-    {
-      "author": "Admin",
-      "text": "dasdasd"
-    },
-    {
-      "author": "Erdem",
-      "text": "test"
-    },
-    {
-      "author": "Admin",
-      "text": "adsasdasdasd"
-    },
-    {
-      "author": "Admin",
-      "text": "test"
-    },
-    {
-      "author": "Admin",
-      "text": "TEst"
-    },
-    {
-      "author": "Sascha",
-      "text": "test 12"
-    },
-    {
-      "author": "Sascha",
-      "text": "test"
-    },
-    {
-      "author": "Sascha",
-      "text": "test"
-    },
-    {
-      "author": "Sascha",
-      "text": "test12"
-    },
-    {
-      "author": "Admin",
-      "text": "test"
-    },
-    {
-      "author": "Sascha",
-      "text": "adadasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "Hallo!"
-    },
-    {
-      "author": "Admin",
-      "text": "Test"
-    },
-    {
-      "author": "Erdem",
-      "text": "Ja nice!"
-    },
-    {
-      "author": "Admin",
-      "text": "Nicer Dicer"
-    },
-    {
-      "author": "Admin",
-      "text": "Testi\r\n"
-    },
-    {
-      "text": "Hallo"
-    },
-    {
-      "text": "Hallo"
-    },
-    {
-      "author": "Sascha",
-      "text": "Testi"
-    },
-    {
-      "author": "Sascha",
-      "text": "Pog"
-    },
-    {
-      "author": "Leoni",
-      "text": "Hallo i bims Leoni!!!!1111!!!!"
-    },
-    {
-      "author": "ZYX",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Testiiiiiiiiiii",
-      "text": "iiiiiiiiiiiiiiaaaaaaaaaaaaaaaaaaaa"
-    },
-    {
-      "author": "Admin",
-      "text": "empty"
+      "text": "test",
+      "xpos": "185",
+      "ypos": "197"
     }
   ],
   "users": [

@@ -1,5 +1,34 @@
-<h1>{{channel.name}}</h1>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        document.querySelector('#message-board').addEventListener('click', moveTo)
+    })
+    function moveTo(Event){
+        let div = document.getElementById('message-board')
+        let box = {left: 0, top:0}
+        try {
+            box = div.getBoundingClientRect();
+        }catch (e) {
 
+        }
+        let x = Event.pageX - box.left;
+        let y = Event.pageY - box.top;
+
+        e = document.getElementById("message-board")
+        modal = document.querySelector('#modal')
+        xpos = document.querySelector('#xpos')
+        ypos = document.querySelector('#ypos')
+
+        xpos.value = x;
+        ypos.value = y;
+        e.style.left = x + "px"
+        e.style.top = y + "px"
+
+        modal.classList.add("modal--shown")
+    }
+</script>
+
+<h1>{{channel.name}}</h1>
+<body id="body">
 <div class="channelchoose">
     <h2 class="ChannelHeader">Channel</h2>
     {{# channels}}
@@ -15,7 +44,20 @@
     </form>
 </div>
 
-<div class="outputbox">
+<main>
+    <ul class="message-board" id="message-board">
+        {{# channel}}
+            {{# messages}}
+                <li class="message-board-item" id="message-board-item" style="left: {{xpos}}px; top: {{ypos}}px">
+                    <h3 id="author">{{author}}</h3>
+                    <p id="text">{{text}}</p>
+                </li>
+            {{/messages}}
+        {{/channel}}
+    </ul>
+</main>
+
+<!--<div class="outputbox">
     {{# channel}}
         {{# messages}}
             <div class="message">
@@ -24,19 +66,7 @@
             </div>
         {{/messages}}
     {{/channel}}
-</div>
-
-<div class="messagebox">
-    <form id="inputbase" method="post" action="/channel/{{channel.name}}">
-        <!--<div class="inputname">
-            <input name="author" id="iauthor" placeholder="Enter ur Name..">
-        </div>--->
-        <div class="inputmessage">
-            <textarea type="text" name="text" id="itext" placeholder="Enter ur Text.."></textarea>
-        </div>
-        <button type="submit" class="send">Send</button>
-    </form>
-</div>
+</div>-->
 
 <div class="userlist">
     <h2>Users</h2>
@@ -52,6 +82,22 @@
 <form id="channelbase" action="/">
     <input id="channelbase" type="submit" value="LogOff" />
 </form>
+
+<div class="modal" id="modal">
+    <div class="modal-container">
+        <form id="inputbase" method="post" action="/channel/{{channel.name}}">
+            <div class="inputmessage">
+                <input type="number" name="xpos" id="xpos" PLACEHOLDER="Enter X Pos">
+                <input type="number" name="ypos" id="ypos" PLACEHOLDER="Enter Y Pos">
+                <textarea type="text" name="text" id="itext" placeholder="Enter ur Text.."></textarea>
+            </div>
+            <button type="submit" class="send">Send</button>
+        </form>
+        <form id="close" method="post" action="/channelrm/{{channel.name}}">
+            <button type="submit" class="close">X</button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>

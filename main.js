@@ -192,16 +192,20 @@ app.post('/channel/:channelName', (request, response) => {
 
     testName = channelName
 
-    const {author, text} = request.body
+    const {author, text, xpos, ypos} = request.body
     const message = {
         author,
-        text
+        text,
+        xpos,
+        ypos
     }
 
     message.author = request.user.name
 
     const {writer} = request.user.name
-    const testwriter ={name: request.user.name}
+    const testwriter = {
+        name: request.user.name
+    }
     const userrole = request.user.role
 
 
@@ -224,9 +228,9 @@ app.post('/channel/:channelName', (request, response) => {
             machtes = channel.empty
             //console.log(channel.users.role)
 
-            if(!channel.users.some(el=>{
+            if(channel.users.some(el=>{
                 if(el.name === message.author)
-                    return false
+                    return true
             })){
                 machtes = false
             }else
@@ -236,6 +240,55 @@ app.post('/channel/:channelName', (request, response) => {
                 machtes = false;
                 channel.users.push(testwriter)
             }
+
+            writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
+                if(error){
+                    response.status(500).end()
+                } else {
+                    response.redirect(`/channel/${testName}`)
+                }
+            })
+        })
+})
+
+app.post('/channelrm/:channelName', (request, response) => {
+
+    const {channelName} = request.params
+
+    testName = channelName
+
+    const {author, text, xpos, ypos} = request.body
+    const message = {
+        author,
+        text,
+        xpos,
+        ypos
+    }
+
+    message.author = request.user.name
+
+    const {writer} = request.user.name
+    const testwriter = {
+        name: request.user.name
+    }
+    const userrole = request.user.role
+
+
+    if(!existsSync(channelFileName)){
+        response.status(404).end()
+        return
+    }
+
+    readFile(
+        channelFileName,
+        FILE_OPTIONS,
+        (error, text) => {
+            if(error){
+                response.status(500).end()
+                return
+            }
+            let channel = JSON.parse(text)
+            channel.messages.slice(0,-1)
 
             writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
                 if(error){
