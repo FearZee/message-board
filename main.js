@@ -329,3 +329,125 @@ app.post('/testichannel', (req, res) => {
         })
     })
 })
+
+app.get('/channeltest/:channelName', (request, response) => {
+
+    if(request.user){
+        const {channelName} = request.params
+
+        testName = channelName
+
+        channelFileName = path.join(CHANNEL_DIR, `${channelName}.json`)
+
+        if(!existsSync(channelFileName)){
+            response.status(404).end()
+            return
+        }
+
+
+        let files = readdirSync(CHANNEL_DIR,{encoding: 'utf-8'})
+
+        for (let file of files){
+
+            const fileName = path.join(CHANNEL_DIR, file)
+            let tempFile = JSON.parse(readFileSync(fileName, 'utf-8'))
+            /*readFile(fileName, {encoding: 'utf-8'}, (err, data) => {
+                tempFile = JSON.parse(data)*/
+
+            if(channels.length < 1){
+                channels.push(tempFile)
+            }else if(!channels.some(el =>{
+                if(el.name === tempFile.name){
+                    return true
+                }
+            })){
+                channels.push(tempFile)
+            }
+        }
+        channels.sort(function (a,b) {
+            return a.id - b.id
+        })
+
+        readFile(
+            channelFileName,
+            FILE_OPTIONS,
+            (error, text) => {
+                if(error){
+                    response.status(500).end()
+                    return
+                }
+                const channel = JSON.parse(text)
+                response.render('channel', {channel , channels})
+            })
+    }else{
+        response.render('login',{
+            message: 'Please login to continue.',
+            messageClass: 'alert-danger'
+        })
+    }
+})
+
+app.post('/channeltest/:channelName', (request, response) => {
+
+    const {channelName} = request.params
+
+    testName = channelName
+
+    const {author, text, xpos, ypos} = request.body
+    const message = {
+        author,
+        text,
+        xpos,
+        ypos
+    }
+
+    message.author = request.user.name
+
+    const {writer} = request.user.name
+    const testwriter = {
+        name: request.user.name
+    }
+    const userrole = request.user.role
+
+
+    if(!existsSync(channelFileName)){
+        response.status(404).end()
+        return
+    }
+
+    readFile(
+        channelFileName,
+        FILE_OPTIONS,
+        (error, text) => {
+            if(error){
+                response.status(500).end()
+                return
+            }
+            let channel = JSON.parse(text)
+            channel.messages.unshift(message)
+
+            machtes = channel.empty
+            //console.log(channel.users.role)
+
+            if(channel.users.some(el=>{
+                if(el.name === message.author)
+                    return true
+            })){
+                machtes = false
+            }else
+                machtes = true
+
+            if(machtes){
+                machtes = false;
+                channel.users.push(testwriter)
+            }
+
+            writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
+                if(error){
+                    response.status(500).end()
+                } else {
+                    response.redirect(`/channel/${testName}`)
+                }
+            })
+        })
+})

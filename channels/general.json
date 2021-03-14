@@ -4,6 +4,18 @@
   "empty": "false",
   "messages": [
     {
+      "author": "Sascha",
+      "text": "dsfsdfsdf",
+      "xpos": "1431",
+      "ypos": "286"
+    },
+    {
+      "author": "Admin",
+      "text": "asdasd",
+      "xpos": "862",
+      "ypos": "252"
+    },
+    {
       "author": "Admin",
       "text": "Hallo ich bins",
       "xpos": "555",

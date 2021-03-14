@@ -71,23 +71,21 @@ body{
 }
 
 h1{
-    margin-left: 9%;
-    margin-right: 10%;
+    top: 0;
+    left: 10rem;
+    right: 10rem;
     background-color: dimgrey;
     text-align: center;
     font-size: 480%;
     margin-top: auto;
-    border-bottom: solid;
 }
 
 .channelchoose{
     position: absolute;
     min-height: 97vh;
-    margin-top: -7.75%;
-    margin-right: 0;
-    margin-left: 0;
+    top: 0;
     background-color: #404040;
-    max-width: 10rem;
+    min-width: 10rem;
 }
 
 #channelbase{
@@ -160,10 +158,13 @@ h1{
 }
 
 .userlist{
+    position: absolute;
     margin-left: 90%;
     background-color: #404040;
     text-align: center;
-    margin-top: -956px;
+    top: 0;
+    right: 0;
+    min-width: 10rem;
     min-height: 97vh;
 }
 
@@ -208,11 +209,10 @@ h1{
 
 main{
     position: relative;
-    width: 80%;
     left: 11rem;
-    right: 10%;
-    top: 6rem;
+    right: 10rem;
     background-color: #dddddd;
+    width: 161vh;
     min-height: 88vh;
 }
 
@@ -225,10 +225,14 @@ main{
 }
 
 .message-board-item{
+    background-color: grey;
+    border: 1px solid #aaa;
     position: absolute;
     height: 8rem;
     width: 8rem;
+}
 
-    background-color: beige;
-    border-radius: 2px;
+.message-board-item:hover{
+    z-index: 1;
+    background-color: #b0afb0;
 }

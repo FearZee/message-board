@@ -1,4 +1,5 @@
 <script>
+    let messagepx = 128
     document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#message-board').addEventListener('click', moveTo)
     })
@@ -7,21 +8,31 @@
         let box = {left: 0, top:0}
         try {
             box = div.getBoundingClientRect();
+            console.log(box)
         }catch (e) {
 
         }
-        let x = Event.pageX - box.left;
-        let y = Event.pageY - box.top;
+        let x = Event.pageX - box.left - (messagepx/2);
+        let y = Event.pageY - box.top - (messagepx/2);
 
         e = document.getElementById("message-board")
         modal = document.querySelector('#modal')
         xpos = document.querySelector('#xpos')
         ypos = document.querySelector('#ypos')
 
-        xpos.value = x;
-        ypos.value = y;
-        e.style.left = x + "px"
-        e.style.top = y + "px"
+        if(y < 0)
+            y = 0
+        if(y > Math.round(box.height - messagepx))
+            y = Math.round(box.height - messagepx)
+        if(x < 0)
+            x=0
+        if(x > Math.round(box.width - messagepx))
+            x= Math.round(box.width - messagepx)
+
+        xpos.value = x
+        ypos.value = y
+        e.style.left = xpos.value + "px"
+        e.style.top = ypos.value + "px"
 
         modal.classList.add("modal--shown")
     }
@@ -85,7 +96,7 @@
 
 <div class="modal" id="modal">
     <div class="modal-container">
-        <form id="inputbase" method="post" action="/channel/{{channel.name}}">
+        <form id="inputbase" method="post" action="/channeltest/{{channel.name}}">
             <div class="inputmessage">
                 <input type="number" name="xpos" id="xpos" PLACEHOLDER="Enter X Pos">
                 <input type="number" name="ypos" id="ypos" PLACEHOLDER="Enter Y Pos">
