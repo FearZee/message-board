@@ -4,94 +4,125 @@
   "empty": "false",
   "messages": [
     {
-      "author": "Sascha",
-      "text": "dsfsdfsdf",
-      "xpos": "1431",
-      "ypos": "286"
-    },
-    {
-      "author": "Admin",
-      "text": "asdasd",
-      "xpos": "862",
-      "ypos": "252"
-    },
-    {
-      "author": "Admin",
-      "text": "Hallo ich bins",
-      "xpos": "555",
-      "ypos": "332"
-    },
-    {
-      "author": "Admin",
-      "text": "asdasd",
-      "xpos": "368",
-      "ypos": "464"
-    },
-    {
-      "author": "Admin",
-      "text": "test",
-      "xpos": "1436",
-      "ypos": "49"
-    },
-    {
-      "author": "Admin",
-      "text": "asdasdasd",
-      "xpos": "170",
-      "ypos": "610"
-    },
-    {
+      "mesid": 10,
       "author": "Admin",
       "text": "",
-      "xpos": "326",
-      "ypos": "49"
+      "xpos": null,
+      "ypos": null
     },
     {
+      "mesid": 9,
       "author": "Admin",
-      "text": "dasdasd",
-      "xpos": "1036",
-      "ypos": "568"
+      "text": "",
+      "xpos": [
+        "[object HTMLInputElement]",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "ypos": [
+        "[object HTMLInputElement]",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
     },
     {
+      "mesid": 8,
       "author": "Admin",
-      "text": "asdasdasdasd",
-      "xpos": "981",
-      "ypos": "151"
+      "text": "",
+      "xpos": [
+        "[object HTMLInputElement]",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "ypos": [
+        "[object HTMLInputElement]",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
     },
     {
-      "author": "Sascha",
-      "text": "asdasdasda",
-      "xpos": "1171",
-      "ypos": "163"
+      "mesid": 7,
+      "author": "Admin",
+      "text": "",
+      "xpos": null,
+      "ypos": null
     },
     {
-      "author": "Sascha",
+      "mesid": 6,
+      "author": "Admin",
       "text": "asdasd",
-      "xpos": "537",
-      "ypos": "135"
+      "xpos": 331,
+      "ypos": 614
     },
     {
+      "mesid": 5,
+      "author": "Admin",
+      "text": "test",
+      "xpos": 141,
+      "ypos": 264
+    },
+    {
+      "mesid": 4,
+      "author": "Admin",
+      "text": "",
+      "xpos": 516,
+      "ypos": 508
+    },
+    {
+      "mesid": 0,
       "author": "Sascha",
-      "text": "asdasdas",
-      "xpos": "543",
-      "ypos": "533"
+      "text": "dsfsdfsdf",
+      "xpos": 590,
+      "ypos": 50
     },
     {
-      "author": "Sascha",
-      "text": "asdasdas",
-      "xpos": "886",
-      "ypos": "222"
+      "mesid": 1,
+      "author": "Admin",
+      "text": "asdasd",
+      "xpos": 264,
+      "ypos": 108
     },
     {
-      "author": "Sascha",
-      "text": "adasdasd",
-      "xpos": "17",
-      "ypos": "19"
+      "mesid": 2,
+      "author": "Admin",
+      "text": "Hallo ich bins",
+      "xpos": 123,
+      "ypos": 413
     },
     {
+      "mesid": 3,
       "author": "Sascha",
       "text": "test",
-      "xpos": "185",
-      "ypos": "197"
+      "xpos": 531,
+      "ypos": 247
     }
   ],
   "users": [

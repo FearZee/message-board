@@ -176,7 +176,8 @@ app.get('/channel/:channelName', (request, response) => {
                     return
                 }
                 const channel = JSON.parse(text)
-                response.render('channel', {channel , channels})
+                console.log(channel.messages[0].mesid)
+                response.render('channel', {channel, channels})
             })
     }else{
         response.render('login',{
@@ -192,8 +193,9 @@ app.post('/channel/:channelName', (request, response) => {
 
     testName = channelName
 
-    const {author, text, xpos, ypos} = request.body
+    const {mesid, author, text, xpos, ypos} = request.body
     const message = {
+        mesid,
         author,
         text,
         xpos,
@@ -223,6 +225,8 @@ app.post('/channel/:channelName', (request, response) => {
                 return
             }
             let channel = JSON.parse(text)
+            message.mesid = channel.messages.length + 1
+            console.log(message.mesid)
             channel.messages.unshift(message)
 
             machtes = channel.empty
@@ -302,6 +306,62 @@ app.post('/channelrm/:channelName', (request, response) => {
 
 app.listen(port,() => {
     console.log(`Example app listening at http://localhost:${port}`)
+})
+
+app.post('/messagedrob/:channelName', (request, response) => {
+    const {channelName} = request.params
+
+    testName = channelName
+
+    const {mesid, xpos, ypos} = request.body
+    const poschange = {
+        mesid,
+        xpos,
+        ypos
+    }
+
+    let messageId = parseInt(poschange.mesid)
+    let messagexpos = parseInt(poschange.xpos)
+    let messageypos = parseInt(poschange.ypos)
+
+
+    if(!existsSync(channelFileName)){
+        response.status(404).end()
+        return
+    }
+
+    readFile(
+        channelFileName,
+        FILE_OPTIONS,
+        (error, text) => {
+            if(error){
+                response.status(500).end()
+                return
+            }
+            let channel = JSON.parse(text)
+
+            let indexofmessage
+
+            channel.messages.some(e => {
+                if(e.mesid ===  messageId){
+                    indexofmessage= channel.messages.indexOf(e)
+                    return true
+                }
+            })
+
+            channel.messages[indexofmessage].mesid = messageId
+            channel.messages[indexofmessage].ypos = messageypos
+            channel.messages[indexofmessage].xpos = messagexpos
+
+
+            writeFile(channelFileName, JSON.stringify(channel, null, 2), FILE_OPTIONS, (error)=> {
+                if(error){
+                    response.status(500).end()
+                } else {
+                    response.redirect(`/channel/${testName}`)
+                }
+            })
+        })
 })
 
 app.post('/testichannel', (req, res) => {
@@ -393,8 +453,9 @@ app.post('/channeltest/:channelName', (request, response) => {
 
     testName = channelName
 
-    const {author, text, xpos, ypos} = request.body
+    const {mesid, author, text, xpos, ypos} = request.body
     const message = {
+        mesid,
         author,
         text,
         xpos,
@@ -424,6 +485,7 @@ app.post('/channeltest/:channelName', (request, response) => {
                 return
             }
             let channel = JSON.parse(text)
+            message.mesid = channel.messages.length
             channel.messages.unshift(message)
 
             machtes = channel.empty

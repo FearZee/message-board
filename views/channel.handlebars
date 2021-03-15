@@ -1,24 +1,26 @@
 <script>
     let messagepx = 128
+    let mesid
     document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector('#message-board').addEventListener('click', moveTo)
+        //document.querySelector('#message-board').addEventListener('drag', drag)
+        //document.querySelector('#DragAndDrop').addEventListener('drop', drop)
     })
     function moveTo(Event){
         let div = document.getElementById('message-board')
         let box = {left: 0, top:0}
         try {
             box = div.getBoundingClientRect();
-            console.log(box)
         }catch (e) {
 
         }
         let x = Event.pageX - box.left - (messagepx/2);
         let y = Event.pageY - box.top - (messagepx/2);
 
-        e = document.getElementById("message-board")
-        modal = document.querySelector('#modal')
-        xpos = document.querySelector('#xpos')
-        ypos = document.querySelector('#ypos')
+        let e = document.getElementById("message-board")
+        let modal = document.querySelector('#modal')
+        let xpos = document.querySelector('#xpos')
+        let ypos = document.querySelector('#ypos')
 
         if(y < 0)
             y = 0
@@ -35,6 +37,53 @@
         e.style.top = ypos.value + "px"
 
         modal.classList.add("modal--shown")
+    }
+
+    function allowDrop(e){
+        e.preventDefault()
+        e.dataTransfer.dropEffect = "move"
+    }
+
+    function drag(e){
+        e.dataTransfer.setData("text", e.target.outerHTML)
+        e.dataTransfer.effectAllowed = "move"
+
+        mesid = e.target.dataset.columns
+    }
+
+    function drop(e){
+        e.preventDefault()
+        let div = document.getElementById('message-board')
+        let box = {left: 0, top:0}
+        try {
+            box = div.getBoundingClientRect();
+        }catch (e) {
+
+        }
+
+        let x = e.pageX - box.left - (messagepx/2);
+        let y = e.pageY - box.top - (messagepx/2);
+
+        if(y < 0)
+            y = 0
+        if(y > Math.round(box.height - messagepx))
+            y = Math.round(box.height - messagepx)
+        if(x < 0)
+            x=0
+        if(x > Math.round(box.width - messagepx))
+            x= Math.round(box.width - messagepx)
+
+        xpos.value = x
+        ypos.value = y
+
+        console.log(xpos.value)
+        console.log(ypos.value)
+
+        document.getElementById("hiddenmesinput").value = mesid
+        document.getElementById("hiddenyposinput").value = ypos.value
+        document.getElementById("hiddenxposinput").value = xpos.value
+
+        document.getElementById("DragAndDrop").submit()
     }
 </script>
 
@@ -56,16 +105,21 @@
 </div>
 
 <main>
-    <ul class="message-board" id="message-board">
-        {{# channel}}
-            {{# messages}}
-                <li class="message-board-item" id="message-board-item" style="left: {{xpos}}px; top: {{ypos}}px">
-                    <h3 id="author">{{author}}</h3>
-                    <p id="text">{{text}}</p>
-                </li>
-            {{/messages}}
-        {{/channel}}
-    </ul>
+    <form id="DragAndDrop" method="post" action="/messagedrob/{{channel.name}}">
+        <ul class="message-board" id="message-board" ondrop="drop(event)" ondragover="allowDrop(event)">
+            {{# channel}}
+                {{# messages}}
+                    <li class="message-board-item" id="message-board-item" data-columns="{{mesid}}" style="left: {{xpos}}px; top: {{ypos}}px" draggable="true" ondragstart="drag(event)">
+                        <h3 id="author">{{author}}</h3>
+                        <p id="text">{{text}}</p>
+                        <input name="mesid" id="hiddenmesinput" style="visibility: hidden">
+                        <input name="ypos" id="hiddenyposinput" style="visibility: hidden">
+                        <input name="xpos" id="hiddenxposinput" style="visibility: hidden">
+                    </li>
+                {{/messages}}
+            {{/channel}}
+        </ul>
+    </form>
 </main>
 
 <!--<div class="outputbox">
