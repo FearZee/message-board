@@ -176,7 +176,6 @@ app.get('/channel/:channelName', (request, response) => {
                     return
                 }
                 const channel = JSON.parse(text)
-                console.log(channel.messages[0].mesid)
                 response.render('channel', {channel, channels})
             })
     }else{
@@ -226,7 +225,6 @@ app.post('/channel/:channelName', (request, response) => {
             }
             let channel = JSON.parse(text)
             message.mesid = channel.messages.length + 1
-            console.log(message.mesid)
             channel.messages.unshift(message)
 
             machtes = channel.empty

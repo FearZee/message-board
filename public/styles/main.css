@@ -1,27 +1,10 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+*{
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-}
-
-ul{
-    padding: 0;
-    margin: 0;
 }
 
 li{
@@ -31,149 +14,92 @@ li{
 body{
     color: white;
     background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.messagebox{
-    margin-top: 0%;
-    background-color: dimgrey;
-    margin-left: 9%;
-    margin-right: 10%;
-    height: 24vh;
+#header{
+    background-color: #f58929;
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    width: auto;
+    top: 1vh;
+    height: 8vh;
+    border-radius: 5px;
+    padding-left: 5vh;
+    font-size: 6vh;
 }
 
-.inputname{
-    margin-left: 5%;
-    margin-bottom: 1%;
+.chChoose{
+    position: absolute;
+    background-color: #f58929;
+    top: 1vh;
+    width: 11%;
+    height: 98vh;
+    margin-left: 1vh;
+    border-radius: 5px;
 }
 
-.inputmessage{
-    margin-left: 5%;
-    margin-bottom: 1%;
-}
-
-#itext{
+.chHeader{
+    box-sizing: border-box;
     position: relative;
-    margin-left: 1.1%;
-    width: 5rem;
+    padding-left: 20%;
+    width: auto;
+    height: 6vh;
+    font-size: 4vh;
+    border-bottom: 2px solid #401e16;
 }
 
-.send{
-    border-style: solid;
-    border-radius: 10px;
-    margin-left: 68%;
-    margin-top: 2%;
-    width: 30%;
-    height: 5vh;
-}
-
-#iauthor{
-    width: 50%;
-}
-
-h1{
-    top: 0;
-    left: 10rem;
-    right: 10rem;
-    background-color: dimgrey;
-    text-align: center;
-    font-size: 480%;
-    margin-top: auto;
-}
-
-.channelchoose{
-    position: absolute;
-    min-height: 97vh;
-    top: 0;
-    background-color: #404040;
-    min-width: 10rem;
-}
-
-#channelbase{
-    background-color: #404040;
-    width: 100%;
-    height: 50px;
-    cursor: pointer;
-}
-
-#channelbase:hover{
-    background-color: white;
-}
-
-#channelbase:active{
-    background-color: gray;
-}
-
-.outputbox{
-    margin-top: -45.89%;
-    margin-left: 9%;
-    margin-right: 10%;
-    overflow-y: scroll;
-    background-color: dimgrey;
-    width: 81%;
-    height: 613px;
-    border-bottom: solid;
-    border-top: solid;
-}
-
-.message{
-    margin-left: 5%;
-    margin-right: 5%;
-    border-color: black;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom:solid;
-}
-
-#author{
-    margin-top: 1%;
-    font-size: 150%;
-}
-
-#text{
-    margin-top: -1%;
-    margin-bottom: 1%;
-}
-
-#iauthor{
-    border-radius: 15px;
-    background-color:darkgray;
-    margin-top: 1%;
-    width: 50vh;
-    height: 3vh;
-}
-
-#itext{
-    margin-left: -.1%;
-    border-radius: 15px;
-    background-color:darkgray;
-    width: 50vh;
-    height: 10vh;
-}
-
-.ChannelHeader{
-    margin-bottom: 5%;
-    font-size: 200%;
-    text-align: center;
-}
-
-.userlist{
-    position: absolute;
-    margin-left: 90%;
-    background-color: #404040;
-    text-align: center;
-    top: 0;
-    right: 0;
-    min-width: 10rem;
-    min-height: 97vh;
-}
-
-#user{
+#chFormUnput{
     margin-top: 5%;
 }
 
-#rolename{
-    color: red;
+#chFormBtn, #chInput, #chBtn{
+    position: relative;
+    height: 5vh;
+    width: 80%;
+    left: 10%;
+    border-radius: 5px;
+    margin-top: 5%;
+    font-size: 2.5vh;
+}
+#chInput, #chBtn{
+    font-size: 2vh;
+ }
+
+#chFormUnput{
+    position: relative;
+    top: 54%;
+}
+
+#userlist{
+    position: absolute;
+    background-color: #f58929;
+    right: 1vh;
+    top: 1vh;
+    left: auto;
+    height: 98vh;
+    border-radius: 5px;
+    width: 11%;
+}
+
+#hUser{
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 20%;
+    width: auto;
+    height: 6vh;
+    font-size: 4vh;
+    border-bottom: 2px solid #401e16;
+}
+
+#user{
+    position: relative;
+    height: 4vh;
+    width: 80%;
+    left: 10%;
+    //padding-left: 5%;
+    font-size: 2.5vh;
 }
 
 .modal{
@@ -190,15 +116,16 @@ h1{
     background-color: rgba(255,255,255,0.5);
 }
 
+
 .modal-container{
     display: flex;
+    background-color: #f58929;
     width: 30%;
     min-width: 200px;
     height: 30%;
     min-height: 100px;
 
     border: 1px solid #aaa;
-    background-color: #FFF;
     border-radius: 5px;
     box-shadow: 6px 6px 3px 3px #ddd;
 }
@@ -207,13 +134,34 @@ h1{
     display: flex;
 }
 
-main{
+#xpos, #ypos, #itext, #modalbtn{
     position: relative;
-    left: 11rem;
-    right: 10rem;
-    background-color: #dddddd;
-    width: 161vh;
-    min-height: 88vh;
+    margin-top: 1%;
+    left: 15%;
+    border-radius: 5px;
+    padding-left: 1%;
+}
+
+#itext{
+    position: relative;
+    width: 70.5%;
+    height: 20vh;
+}
+#modalbtn{
+    position: relative;
+    width: 71.5%;
+    height: 5vh;
+}
+
+main{
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 10vh;
+    background-color: #fab689;
+    width: auto;
+    height: 89vh;
+    border-radius: 5px;
 }
 
 .message-board{
@@ -225,14 +173,28 @@ main{
 }
 
 .message-board-item{
-    background-color: grey;
-    border: 1px solid #aaa;
+    background-color: #ffff00;
+    color: black;
+    border: 1px solid #ffff00;
+    border-radius: 5px;
     position: absolute;
     height: 8rem;
     width: 8rem;
 }
 
+#author, #text{
+    padding-left: 5%;
+}
+
+#author{
+    font-size: 2vh;
+}
+
+#text{
+    font-size: 1.5vh;
+}
+
 .message-board-item:hover{
     z-index: 1;
-    background-color: #b0afb0;
+    background-color: #ffff9d;
 }

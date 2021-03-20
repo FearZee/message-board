@@ -33,8 +33,6 @@
 
         xpos.value = x
         ypos.value = y
-        e.style.left = xpos.value + "px"
-        e.style.top = ypos.value + "px"
 
         modal.classList.add("modal--shown")
     }
@@ -83,29 +81,31 @@
         document.getElementById("hiddenyposinput").value = ypos.value
         document.getElementById("hiddenxposinput").value = xpos.value
 
-        document.getElementById("DragAndDrop").submit()
+        document.getElementById("dragAndDrop").submit()
     }
 </script>
 
-<h1>{{channel.name}}</h1>
+<h1 id="header">{{channel.name}}</h1>
+
 <body id="body">
-<div class="channelchoose">
-    <h2 class="ChannelHeader">Channel</h2>
+
+<div class="chChoose">
+    <h2 class="chHeader">Channel</h2>
     {{# channels}}
-    <form id="channelbase" action="/channel/{{this.name}}">
-        <input id="channelbase" type="submit" value="{{this.name}}" />
+    <form id="chForm" action="/channel/{{this.name}}">
+        <input id="chFormBtn" type="submit" value="{{this.name}}" />
     </form>
     {{/channels}}
-    <form id="ichannel" method="post" action="/testichannel">
-        <div class="inputchannel">
-            <input name="ichannel" id="ichannel" placeholder="Enter a name for a new channel">
+    <form id="chFormUnput" method="post" action="/testichannel">
+        <div class="chDivInput">
+            <textarea type="text" name="ichannel" id="chInput" placeholder="Enter a name for a new channel"></textarea>
         </div>
-        <button type="submit">Add new Channel!</button>
+        <button type="submit" id="chBtn">Add new Channel!</button>
     </form>
 </div>
 
 <main>
-    <form id="DragAndDrop" method="post" action="/messagedrob/{{channel.name}}">
+    <form id="dragAndDrop" method="post" action="/messagedrob/{{channel.name}}">
         <ul class="message-board" id="message-board" ondrop="drop(event)" ondragover="allowDrop(event)">
             {{# channel}}
                 {{# messages}}
@@ -122,19 +122,8 @@
     </form>
 </main>
 
-<!--<div class="outputbox">
-    {{# channel}}
-        {{# messages}}
-            <div class="message">
-                <p id="author">{{author}}</p>
-                <p id="text">{{text}}</p>
-            </div>
-        {{/messages}}
-    {{/channel}}
-</div>-->
-
-<div class="userlist">
-    <h2>Users</h2>
+<div id="userlist">
+    <h1 id="hUser">Users</h1>
     {{# channel}}
         {{# users}}
             <div>
@@ -144,19 +133,19 @@
     {{/channel}}
 </div>
 
-<form id="channelbase" action="/">
-    <input id="channelbase" type="submit" value="LogOff" />
-</form>
+<!--<form id="" action="/">
+    <input id="" type="submit" value="LogOff" />
+</form>-->
 
 <div class="modal" id="modal">
     <div class="modal-container">
         <form id="inputbase" method="post" action="/channeltest/{{channel.name}}">
             <div class="inputmessage">
-                <input type="number" name="xpos" id="xpos" PLACEHOLDER="Enter X Pos">
-                <input type="number" name="ypos" id="ypos" PLACEHOLDER="Enter Y Pos">
+                <input type="text" name="xpos" id="xpos" PLACEHOLDER="Enter X Pos">
+                <input type="text" name="ypos" id="ypos" PLACEHOLDER="Enter Y Pos">
                 <textarea type="text" name="text" id="itext" placeholder="Enter ur Text.."></textarea>
             </div>
-            <button type="submit" class="send">Send</button>
+            <button type="submit" id="modalbtn" class="send">Send</button>
         </form>
         <form id="close" method="post" action="/channelrm/{{channel.name}}">
             <button type="submit" class="close">X</button>

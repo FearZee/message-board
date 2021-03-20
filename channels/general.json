@@ -4,125 +4,109 @@
   "empty": "false",
   "messages": [
     {
+      "mesid": 14,
+      "author": "Admin",
+      "text": "adasdad",
+      "xpos": 1097,
+      "ypos": 330
+    },
+    {
+      "mesid": 13,
+      "author": "Admin",
+      "text": "asdsdasd",
+      "xpos": 273,
+      "ypos": 31
+    },
+    {
+      "mesid": 12,
+      "author": "Admin",
+      "text": "asdasdasd",
+      "xpos": 853,
+      "ypos": 87
+    },
+    {
+      "mesid": 11,
+      "author": "Admin",
+      "text": "wraasdadsa",
+      "xpos": 821,
+      "ypos": 505
+    },
+    {
       "mesid": 10,
       "author": "Admin",
       "text": "",
-      "xpos": null,
-      "ypos": null
+      "xpos": 1331,
+      "ypos": 0
     },
     {
       "mesid": 9,
       "author": "Admin",
       "text": "",
-      "xpos": [
-        "[object HTMLInputElement]",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "ypos": [
-        "[object HTMLInputElement]",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ]
+      "xpos": 1316,
+      "ypos": 324
     },
     {
       "mesid": 8,
       "author": "Admin",
       "text": "",
-      "xpos": [
-        "[object HTMLInputElement]",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      "ypos": [
-        "[object HTMLInputElement]",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ]
+      "xpos": 680,
+      "ypos": 220
     },
     {
       "mesid": 7,
       "author": "Admin",
       "text": "",
-      "xpos": null,
-      "ypos": null
+      "xpos": 169,
+      "ypos": 602
     },
     {
       "mesid": 6,
       "author": "Admin",
       "text": "asdasd",
-      "xpos": 331,
-      "ypos": 614
+      "xpos": 436,
+      "ypos": 436
     },
     {
       "mesid": 5,
       "author": "Admin",
       "text": "test",
-      "xpos": 141,
-      "ypos": 264
+      "xpos": 382,
+      "ypos": 209
     },
     {
       "mesid": 4,
       "author": "Admin",
       "text": "",
-      "xpos": 516,
-      "ypos": 508
+      "xpos": 1145,
+      "ypos": 661
     },
     {
       "mesid": 0,
       "author": "Sascha",
       "text": "dsfsdfsdf",
-      "xpos": 590,
-      "ypos": 50
+      "xpos": 1060,
+      "ypos": 53
     },
     {
       "mesid": 1,
       "author": "Admin",
       "text": "asdasd",
-      "xpos": 264,
-      "ypos": 108
+      "xpos": 479,
+      "ypos": 20
     },
     {
       "mesid": 2,
       "author": "Admin",
       "text": "Hallo ich bins",
-      "xpos": 123,
-      "ypos": 413
+      "xpos": 67,
+      "ypos": 443
     },
     {
       "mesid": 3,
       "author": "Sascha",
       "text": "test",
-      "xpos": 531,
-      "ypos": 247
+      "xpos": 58,
+      "ypos": 96
     }
   ],
   "users": [
