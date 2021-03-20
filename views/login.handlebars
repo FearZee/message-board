@@ -1,5 +1,5 @@
 <div style="margin-top: 100px">
-    <div>
+    <div id="logInName">
 
         {{#if message}}
             <div class="alert {{messageClass}}" role="alert">
@@ -8,15 +8,15 @@
         {{/if}}
 
         <form method="POST" action="/login">
-            <div>
-                <label for="exampleInputName1">UserName</label>
+            <div id="logInName">
+                <label for="exampleInputName1" id="logInUsername">UserName</label>
                 <input name="name" type="text" id="exampleInputName1" placeholder="Enter UserName">
             </div>
-            <div>
-                <label for="exampleInputPassword1">Password</label>
+            <div id="logInPassword">
+                <label for="exampleInputPassword1" id="logInEnterPassword">Password</label>
                 <input name="password" type="password" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" id="logInBtn">Login</button>
         </form>
     </div>
 </div>

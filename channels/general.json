@@ -4,126 +4,30 @@
   "empty": "false",
   "messages": [
     {
-      "mesid": 14,
-      "author": "Admin",
-      "text": "adasdad",
-      "xpos": 1097,
-      "ypos": 330
-    },
-    {
-      "mesid": 13,
-      "author": "Admin",
-      "text": "asdsdasd",
-      "xpos": 273,
-      "ypos": 31
-    },
-    {
-      "mesid": 12,
-      "author": "Admin",
-      "text": "asdasdasd",
-      "xpos": 853,
-      "ypos": 87
-    },
-    {
-      "mesid": 11,
-      "author": "Admin",
-      "text": "wraasdadsa",
-      "xpos": 821,
-      "ypos": 505
-    },
-    {
-      "mesid": 10,
-      "author": "Admin",
-      "text": "",
-      "xpos": 1331,
-      "ypos": 0
-    },
-    {
-      "mesid": 9,
-      "author": "Admin",
-      "text": "",
-      "xpos": 1316,
-      "ypos": 324
-    },
-    {
-      "mesid": 8,
-      "author": "Admin",
-      "text": "",
-      "xpos": 680,
-      "ypos": 220
-    },
-    {
-      "mesid": 7,
-      "author": "Admin",
-      "text": "",
-      "xpos": 169,
-      "ypos": 602
-    },
-    {
-      "mesid": 6,
-      "author": "Admin",
-      "text": "asdasd",
-      "xpos": 436,
-      "ypos": 436
-    },
-    {
-      "mesid": 5,
-      "author": "Admin",
-      "text": "test",
-      "xpos": 382,
-      "ypos": 209
-    },
-    {
-      "mesid": 4,
-      "author": "Admin",
-      "text": "",
-      "xpos": 1145,
-      "ypos": 661
-    },
-    {
-      "mesid": 0,
+      "mesid": 2,
       "author": "Sascha",
-      "text": "dsfsdfsdf",
-      "xpos": 1060,
-      "ypos": 53
+      "text": "schoener Tag heute!\r\n\r\nLg",
+      "xpos": 13,
+      "ypos": 706
     },
     {
       "mesid": 1,
-      "author": "Admin",
-      "text": "asdasd",
-      "xpos": 479,
-      "ypos": 20
-    },
-    {
-      "mesid": 2,
-      "author": "Admin",
-      "text": "Hallo ich bins",
-      "xpos": 67,
-      "ypos": 443
-    },
-    {
-      "mesid": 3,
       "author": "Sascha",
-      "text": "test",
-      "xpos": 58,
-      "ypos": 96
+      "text": "Hallo!",
+      "xpos": 1060,
+      "ypos": 207
+    },
+    {
+      "mesid": 14,
+      "author": "Admin",
+      "text": "Hi!",
+      "xpos": 0,
+      "ypos": 0
     }
   ],
   "users": [
     {
       "name": "Admin"
-    },
-    {
-      "name": "Testiiiiiiiiiii"
-    },
-    {
-      "name": "ZYX"
-    },
-    {
-      "name": "Leoni"
-    },
-    {
-      "name": "ddddddd"
     },
     {
       "name": "Sascha"

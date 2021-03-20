@@ -198,3 +198,48 @@ main{
     z-index: 1;
     background-color: #ffff9d;
 }
+
+
+#logInName, #logInPassword{
+    position: relative;
+    background-color: #f58929;
+    width: 20%;
+    min-width: 50px;
+    height: 10%;
+    min-height: 70px;
+    left: 40%;
+    margin-top: 1%;
+
+    border-radius: 5px;
+}
+
+#exampleInputName1{
+    position: relative;
+    right: 50%;
+    top: 3vh;
+    height: 3vh;
+    border-radius: 5px;
+}
+
+#exampleInputPassword1{
+    position: relative;
+    right: 50%;
+    top: 3vh;
+    height: 3vh;
+    border-radius: 5px;
+}
+
+#logInUsername, #logInEnterPassword{
+    position: absolute;
+    top: 10%;
+    right: 50%;
+}
+
+#logInBtn{
+    position: relative;
+    width: 30%;
+    height: 3vh;
+    border-radius: 5px;
+    left: 37%;
+    margin-bottom: 5%;
+}

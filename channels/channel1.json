@@ -4,107 +4,30 @@
   "empty": "false",
   "messages": [
     {
+      "mesid": 2,
       "author": "Sascha",
-      "text": "asdasdasd",
-      "xpos": "924",
-      "ypos": "220"
+      "text": "nice",
+      "xpos": 854,
+      "ypos": 364
     },
     {
+      "mesid": 1,
       "author": "Sascha",
-      "text": "Hallo"
+      "text": "nice ey!",
+      "xpos": 0,
+      "ypos": 0
     },
     {
-      "author": "Sascha",
-      "text": "asdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adsasdasdad"
-    },
-    {
-      "author": "Sascha",
-      "text": "asdasdasd"
-    },
-    {
-      "author": "Sascha",
-      "text": "adadasd"
-    },
-    {
+      "mesid": 0,
       "author": "Admin",
-      "text": "asdasdasdas"
-    },
-    {
-      "author": "Sascha",
-      "text": "Ollah"
-    },
-    {
-      "author": "Ibims Sascha",
-      "text": "I bins der Sascha Hallo!"
-    },
-    {
-      "author": "ABC",
-      "text": "dddddd"
-    },
-    {
-      "author": "Testiiiiii",
-      "text": "iiiiiiiiiiiiii"
-    },
-    {
-      "author": "Adolf",
-      "text": "Heil"
-    },
-    {
-      "author": "testi t",
-      "text": "testi"
-    },
-    {
-      "author": "Test",
-      "text": "testi"
-    },
-    {
-      "author": "Kalle",
-      "text": "2nd Tab testing"
-    },
-    {
-      "author": "Sascha",
-      "text": "2nd Tab"
-    },
-    {
-      "author": "Admin",
-      "text": "pog"
-    },
-    {
-      "author": "Admin",
-      "text": "full"
+      "text": "Willkommen in Channel 1",
+      "xpos": 1115,
+      "ypos": 95
     }
   ],
   "users": [
     {
       "name": "Admin"
-    },
-    {
-      "name": "Sascha"
-    },
-    {
-      "name": "Kalle"
-    },
-    {
-      "name": "Test"
-    },
-    {
-      "name": "testi t"
-    },
-    {
-      "name": "Adolf"
-    },
-    {
-      "name": "Testiiiiii"
-    },
-    {
-      "name": "ABC"
-    },
-    {
-      "name": "Ibims Sascha"
     },
     {
       "name": "Sascha"
